@@ -1,46 +1,77 @@
-# Estação de Bebidas e Sabores
+Estação de Bebidas e Sabores
+Este projeto é um site institucional para o restaurante fictício "Estação de Bebidas e Sabores". O objetivo principal é apresentar de forma clara e acessível informações essenciais, como menu, promoções, formas de pedidos e contato.
 
-Este projeto é uma página inicial para o restaurante "Estação de Bebidas e Sabores". O objetivo é apresentar de forma clara e acessível informações sobre o menu, promoções, pedidos, e detalhes de contato com o restaurante.
+O projeto faz parte da disciplina Análise de Sistemas II e dá continuidade ao trabalho desenvolvido no semestre anterior (Análise de Sistemas I).
 
-## Tecnologias Utilizadas
+📜 Visão Geral
+O site foi projetado para ser intuitivo e responsivo, garantindo uma experiência de usuário otimizada em diversos dispositivos. A arquitetura foi planejada para ser modular, facilitando a manutenção e a adição de novas funcionalidades no futuro.
 
-- **HTML5**: Estrutura básica da página.
-- **CSS**: Estilização da página, com foco na usabilidade e design responsivo.
-- **Bootstrap 5**: Framework CSS utilizado para garantir a responsividade e um design moderno.
-- **JavaScript**: Para melhorar a interação com o usuário (caso necessário em versões futuras).
-- **Acessibilidade**: A página utiliza atributos `aria` para melhorar a experiência de navegação de usuários com deficiências.
+🛠️ Tecnologias Utilizadas
+O projeto foi construído com as seguintes tecnologias, escolhidas para consolidar o conhecimento em programação web e agilizar o desenvolvimento de um layout moderno:
 
-## Funcionalidades
+HTML5: Para a estruturação semântica do conteúdo.
 
-- **Cabeçalho**: Contém o nome do restaurante e links de navegação para as seções do site.
-- **Seção de Destaque**: Apresenta uma introdução ao restaurante com um convite para conferir o menu.
-- **Menu**: Exibe uma seleção de pratos principais, bebidas especiais e sobremesas, com opções para adicionar ao pedido.
-- **Promoções**: Exibe promoções especiais, como Happy Hour e promoções de fim de semana.
-- **Pedidos**: Explica como o cliente pode fazer seu pedido através do sistema online.
-- **Sobre**: Informação sobre o restaurante e sua proposta gastronômica.
-- **Contato**: Detalhes de como entrar em contato com o restaurante por e-mail.
+CSS3: Para o estilo visual e personalização.
 
-## Como Usar
+Bootstrap 5: Para o desenvolvimento de um layout responsivo e moderno.
 
-1. Clone o repositório para o seu computador:
-    ```bash
-    git clone https://github.com/SEU_USUARIO/estacao-bebidas-sabores.git
-    ```
+JavaScript: (em planejamento) Para adicionar interatividade e dinamismo ao site.
 
-2. Abra o arquivo `index.html` no seu navegador de preferência para visualizar a página inicial.
+Acessibilidade: Implementação de boas práticas como uso de aria-labels, contraste adequado e navegação clara.
 
-3. Caso queira editar ou personalizar, basta modificar os arquivos `index.html` e `style.css` de acordo com suas necessidades.
-
-4. Se quiser adicionar novas funcionalidades, como uma página de pedidos ou integrar com um sistema de backend, modifique o arquivo `pedidos.html` ou adicione novos scripts JavaScript.
-
-## Estrutura de Diretórios
-
-```plaintext
+📂 Estrutura de Arquivos
 estacao-bebidas-sabores/
 │
-├── index.html            # Arquivo principal da página inicial
-├── style.css             # Arquivo de estilos personalizados
-└── imagens/              # Pasta contendo as imagens para o cardápio
+├── index.html          # Página inicial e destaques
+├── menu.html           # Cardápio completo
+├── promocoes.html      # Promoções ativas e ofertas
+├── pedidos.html        # Informações sobre como realizar pedidos
+├── sobre.html          # História e missão do restaurante
+├── contato.html        # Formulário de contato e informações de contato
+│
+├── css/
+│   ├── style.css       # Estilos globais e de componentes
+│   └── ...             # Estilos específicos para cada página
+│
+└── imagens/
     ├── imagem1.jpg
-    ├── imagem2.jpg
-    └── imagem3.jpg
+    └── etc.
+✨ Funcionalidades Implementadas
+Página Inicial: Apresentação visual do restaurante com destaques.
+
+Menu: Listagem categorizada de comidas, bebidas e sobremesas.
+
+Promoções: Seção dedicada a ofertas especiais.
+
+Pedidos: Guia com instruções claras para realizar pedidos.
+
+Sobre: Detalhes sobre a história e a proposta do restaurante.
+
+Contato: Formulário e informações para contato.
+
+🚀 O Que Estamos Aprendendo e Buscando
+Este projeto serve como uma plataforma para aplicar e aprofundar nossos conhecimentos. Atualmente, o grupo está focado em:
+
+Tópicos Atuais: SQL, modelagem de dados, Engenharia de Requisitos e integração de sistemas web.
+
+Interesses: Desenvolvimento web responsivo, usabilidade, acessibilidade e documentação de software.
+
+Projetos Futuros: Colaborar em projetos acadêmicos de front-end, aplicações web para negócios locais e projetos open-source educativos.
+
+🤝 Como Contribuir
+Para contribuir com o projeto, siga as boas práticas de Git e entre em contato com os desenvolvedores listados.
+
+Repositório do Projeto: [Link para o repositório aqui]
+
+👨‍💻 Grupo de Desenvolvimento
+Integrante	RGM	E-mail
+Jonathan Araújo Rozeno	37844300	jonatanaraujo2003@gmail.com
+Renan Cordeiro da Silva	37859021	silvarenansilva92@gmail.com
+Sânia M. Alves Almeida	38743124	saniaalvesalmeida@gmail.com
+Thiago Freire da Silva	37871455	thsilva34567@gmail.com
+Informações Adicionais
+Disciplina: Análise de Sistemas II
+
+Professor: Cristiano Negrão
+
+Semestre: 2025/2
