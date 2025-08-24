@@ -63,7 +63,7 @@ Projetos Futuros: Colaborar em projetos acadêmicos de front-end, aplicações w
 🤝 Como Contribuir
 Para contribuir com o projeto, siga as boas práticas de Git e entre em contato com os desenvolvedores listados.
 
-Repositório do Projeto: 
+ **Repositório do Projeto:** [Acesse o código-fonte no GitHub](https://github.com/Estacao-1/-PROJETO_CSM-)
 
 ## 👨‍💻 Grupo de Desenvolvimento
 
