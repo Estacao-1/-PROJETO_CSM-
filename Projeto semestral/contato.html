@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Nosso Restaurante</title>
+    <link rel="stylesheet" href="contato.css">
+    <style>
+        .informacoes-contato, .avaliacoes {
+            margin-top: 20px;
+        }
+        .avaliacoes {
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+        }
+        .avaliacao {
+            margin-bottom: 15px;
+        }
+        .estrelas {
+            color: gold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contato-container">
+        <h1>Fale Conosco</h1>
+        <p>Tem alguma dúvida, sugestão ou deseja fazer uma reserva? Entre em contato!</p>
+
+        <!-- Informações de Contato -->
+        <div class="informacoes-contato">
+            <p><strong>WhatsApp:</strong> <a href="https://wa.me/5599999999999" target="_blank">(99) 99999-9999</a></p>
+            <p><strong>Bem-vindo à Estação de Bebidas e Sabores:</strong> <a href="mailto:contato@nossorestaurante.com">contato@nossorestaurante.com</a></p>
+            <p><strong>Sugestões:</strong> Envie suas ideias e melhorias pelo formulário abaixo.</p>
+            <p><strong>Reclamações:</strong> Se algo não estiver certo, queremos saber para melhorar. Use o formulário abaixo ou envie por e-mail.</p>
+        </div>
+
+        <!-- Formulário de Contato -->
+        <form class="formulario-contato" onsubmit="return enviarMensagem();">
+            <input type="text" name="nome" placeholder="Seu Nome" required>
+            <input type="email" name="email" placeholder="Seu E-mail" required>
+            <input type="tel" name="telefone" placeholder="Seu Telefone" required>
+            <textarea name="mensagem" placeholder="Sua Mensagem" rows="5" required></textarea>
+            <button type="submit">Enviar Mensagem</button>
+        </form>
+
+        <!-- Avaliações -->
+        <div class="avaliacoes">
+            <h2>O que nossos clientes dizem:</h2>
+
+            <div class="avaliacao">
+                <p><strong>Maria Fernanda:</strong> Atendimento rápido e cordial!</p>
+                <p class="estrelas">★★★★★</p>
+            </div>
+
+            <div class="avaliacao">
+                <p><strong>João Pedro:</strong> Tive um pequeno problema, mas resolveram com agilidade.</p>
+                <p class="estrelas">★★★★☆</p>
+            </div>
+
+            <div class="avaliacao">
+                <p><strong>Ana Luiza:</strong> Excelente variedade de bebidas!</p>
+                <p class="estrelas">★★★★★</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function enviarMensagem() {
+            alert("Mensagem enviada com sucesso! Obrigado pelo contato.");
+            return false; // Impede o envio real (para não recarregar a página)
+        }
+    </script>
+
+</body>
+</html>
