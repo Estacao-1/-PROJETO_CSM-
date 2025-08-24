@@ -61,7 +61,7 @@ Projetos Futuros: Colaborar em projetos acadêmicos de front-end, aplicações w
 🤝 Como Contribuir
 Para contribuir com o projeto, siga as boas práticas de Git e entre em contato com os desenvolvedores listados.
 
-Repositório do Projeto: [Link para o repositório aqui]
+Repositório do Projeto: 
 
 👨‍💻 Grupo de Desenvolvimento
 Integrante	RGM	E-mail
@@ -69,6 +69,7 @@ Jonathan Araújo Rozeno	37844300	jonatanaraujo2003@gmail.com
 Renan Cordeiro da Silva	37859021	silvarenansilva92@gmail.com
 Sânia M. Alves Almeida	38743124	saniaalvesalmeida@gmail.com
 Thiago Freire da Silva	37871455	thsilva34567@gmail.com
+
 Informações Adicionais
 Disciplina: Análise de Sistemas II
 
