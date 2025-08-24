@@ -18,8 +18,9 @@ Bootstrap 5: Para o desenvolvimento de um layout responsivo e moderno.
 JavaScript: (em planejamento) Para adicionar interatividade e dinamismo ao site.
 
 Acessibilidade: Implementação de boas práticas como uso de aria-labels, contraste adequado e navegação clara.
+### 📂 Estrutura de Arquivos
 
-📂 Estrutura de Arquivos
+```
 estacao-bebidas-sabores/
 │
 ├── index.html          # Página inicial e destaques
@@ -36,6 +37,7 @@ estacao-bebidas-sabores/
 └── imagens/
     ├── imagem1.jpg
     └── etc.
+```
 ✨ Funcionalidades Implementadas
 Página Inicial: Apresentação visual do restaurante com destaques.
 
