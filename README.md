@@ -50,7 +50,8 @@ Sobre: Detalhes sobre a história e a proposta do restaurante.
 Contato: Formulário e informações para contato.
 
 Grupo de Desenvolvimento
-Integrantes
+Integrantes:
+
 Jonathan Araújo Rozeno – RGM: 37844300 | E-mail: jonatanaraujo2003@gmail.com
 
 Renan Cordeiro da Silva – RGM: 37859021 | E-mail: silvarenansilva92@gmail.com
