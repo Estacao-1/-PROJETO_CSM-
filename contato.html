@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Nosso Restaurante</title>
+    <link rel="stylesheet" href="contato.css">
+</head>
+<body>
+
+    <div class="contato-container">
+        <h1>Fale Conosco</h1>
+        <p>Tem alguma dúvida, sugestão ou deseja fazer uma reserva? Entre em contato!</p>
+
+        <form class="formulario-contato" onsubmit="return enviarMensagem();">
+
+            <input type="text" name="nome" placeholder="Seu Nome" required>
+            <input type="email" name="email" placeholder="Seu E-mail" required>
+            <input type="tel" name="telefone" placeholder="Seu Telefone" required>
+            <textarea name="mensagem" placeholder="Sua Mensagem" rows="5" required></textarea>
+            <button type="submit">Enviar Mensagem</button>
+        </form>
+    </div>
+    <script>
+        function enviarMensagem() {
+            alert("Mensagem enviada com sucesso! Obrigado pelo contato.");
+            return false; // Impede o envio real (para não recarregar a página)
+        }
+        </script>
+        
+</body>
+</html>

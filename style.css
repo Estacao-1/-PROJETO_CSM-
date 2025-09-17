@@ -1,0 +1,243 @@
+/* Resetando algumas configurações padrões */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #343a40;
+    color: #fff;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Destaque (Banner) */
+#destaque {
+    background-color: #d35400;
+    color: #fff;
+    padding: 50px 0;
+}
+
+#destaque h2 {
+    font-size: 2.5rem;
+}
+
+#destaque p {
+    font-size: 1.2rem;
+    margin: 20px 0;
+}
+
+#destaque .btn {
+    font-size: 1.2rem;
+    padding: 10px 30px;
+}
+
+/* Menu */
+#menu {
+    padding: 60px 0;
+}
+
+#menu .card {
+    margin-bottom: 20px;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+.card-img-top:hover{
+    transition: .3s;
+    transform: scale(1.1);
+}
+
+.card-body {
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.card-body .btn {
+    font-size: 1rem;
+    padding: 8px 20px;
+}
+
+/* Promoções */
+#promocoes {
+    background-color: #f8f9fa;
+    padding: 60px 0;
+}
+
+#promocoes .card {
+    margin-bottom: 20px;
+}
+
+.card-body {
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.card-body .btn {
+    font-size: 1rem;
+    padding: 8px 20px;
+}
+
+/* Seção de Pedidos */
+#pedidos {
+    padding: 60px 0;
+    background-color: #343a40;
+    color: #fff;
+}
+
+#pedidos h2 {
+    font-size: 2rem;
+}
+
+#pedidos p {
+    font-size: 1.2rem;
+    margin: 20px 0;
+}
+
+/* Seção Sobre */
+#sobre {
+    background-color: #343a40;
+    color: #fff;
+    padding: 60px 0;
+}
+
+#sobre h2 {
+    font-size: 2rem;
+}
+
+#sobre p {
+    font-size: 1.2rem;
+    margin: 20px 0;
+}
+
+/* Seção de Contato */
+#contato {
+    background-color: #f8f9fa;
+    padding: 60px 0;
+}
+
+#contato h2 {
+    font-size: 2rem;
+}
+
+#contato p {
+    font-size: 1.2rem;
+}
+
+#contato a {
+    font-size: 1.2rem;
+    color: #007bff;
+    text-decoration: none;
+}
+
+#contato a:hover {
+    text-decoration: underline;
+}
+
+/* Rodapé */
+footer {
+    background-color: #343a40;
+    color: #fff;
+    padding: 20px 0;
+}
+
+footer p {
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li a {
+        font-size: 1rem;
+    }
+
+    #destaque h2 {
+        font-size: 2rem;
+    }
+
+    #menu .card-body {
+        padding: 10px;
+    }
+
+    #menu .card-title {
+        font-size: 1.2rem;
+    }
+
+    #menu .card-text {
+        font-size: 1rem;
+    }
+
+    #promocoes .card-title {
+        font-size: 1.2rem;
+    }
+
+    #pedidos h2 {
+        font-size: 1.8rem;
+    }
+
+    #sobre h2 {
+        font-size: 1.8rem;
+    }
+
+    #contato h2 {
+        font-size: 1.8rem;
+    }
+}
