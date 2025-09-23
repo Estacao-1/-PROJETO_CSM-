@@ -1,66 +1,84 @@
-Estação de Bebidas e Sabores Este projeto é um site institucional para o restaurante fictício "Estação de Bebidas e Sabores". O objetivo principal é apresentar de forma clara e acessíveis informações essenciais, como cardápio, promoções, formas de pedidos e contato.
+# Estação de Bebidas e Sabores
 
-O projeto faz parte da disciplina Análise de Sistemas II e dá continuidade ao trabalho desenvolvido no semestre anterior (Análise de Sistemas I).
+## 1. Entidade escolhida e justificativa
 
-📜 Visão Geral O site foi projetado para ser intuitivo e responsivo, garantindo uma experiência de usuário otimizada em diversos dispositivos. A arquitetura foi projetada para ser modular, facilitando a manutenção e a adição de novas funcionalidades no futuro.
+A entidade principal escolhida para o CRUD foi **Pedidos**.\
+- **Por quê?** É a parte central do funcionamento do restaurante --- os
+usuários podem selecionar pratos, bebidas, incluir observações e avaliar
+pedidos.\
+- A partir dessa entidade é possível demonstrar as operações básicas de
+um CRUD: - **Create**: adicionar um pedido. - **Read**: listar pedidos
+em uma tabela. - **Update**: editar um pedido existente. - **Delete**:
+excluir um pedido. - (Extra) Avaliar pedido -- um campo a mais que
+complementa a experiência.
 
-🛠️ Tecnologias Utilizadas O projeto foi construído com as seguintes tecnologias, escolhidas para consolidar o conhecimento em programação web e agilizar o desenvolvimento de um layout moderno:
+Além disso, há um mini-CRUD para **Usuários** usando `localStorage`
+(cadastro, login, recuperação de senha), que reforça a autenticação.
 
-HTML5: Para a estruturação semântica do conteúdo.
+## 2. Tecnologias e linguagens utilizadas
 
-CSS3: Para o estilo visual e personalizado.
+### Frontend
 
-Bootstrap 5: Para o desenvolvimento de um layout responsivo e moderno.
+-   **HTML5**: estrutura do site (nav, seções, formulários e cards).
+-   **CSS3**: estilização customizada (animações fade-in, hover em
+    cards, layout responsivo).
+-   **Bootstrap 5**: framework CSS para componentes responsivos, navbar
+    fixa, modais, tabs e botões.
+-   **JavaScript (puro)**: lógica de:
+    -   Animações ao rolar a página (IntersectionObserver).
+    -   CRUD de pedidos (adicionar, editar, deletar, avaliar).
+    -   Autenticação com `localStorage` (login, cadastro, logout,
+        recuperação de senha).
 
-JavaScript: (em planejamento) Para adicionar interatividade e dinamismo ao site.
+### Backend
 
-Acessibilidade: Implementação de boas práticas como uso de aria-labels, contraste adequado e navegação clara.
+-   Não há backend real (servidor, banco de dados) --- para fins
+    acadêmicos, foi usado o **`localStorage` do navegador** para simular
+    persistência de dados de usuários.
 
-📂 Estrutura de Arquivos
-estacao-bebidas-sabores/
-│
-├── index.html          # Página inicial e destaques
-├── menu.html           # Cardápio completo
-├── promocoes.html      # Promoções ativas e ofertas
-├── pedidos.html        # Informações sobre como realizar pedidos
-├── sobre.html          # História e missão do restaurante
-├── contato.html        # Formulário de contato e informações de contato
-│
-├── css/
-│   ├── style.css       # Estilos globais e de componentes
-│   └── ...             # Estilos específicos para cada página
-│
-└── imagens/
-    ├── imagem1.jpg
-    └── etc.
-✨ Funcionalidades Implementadas Página Inicial: Apresentação visual do restaurante com destaques.
+## 3. Desafios encontrados e soluções
 
-Menu: Lista categorizada de comidas, bebidas e sobremesas.
+  -----------------------------------------------------------------------
+  Desafio                Como foi superado
+  ---------------------- ------------------------------------------------
+  **Persistência sem     Utilizamos `localStorage` para simular um banco
+  backend** -- não havia de dados, armazenando JSON com informações de
+  servidor para salvar   cadastro e login.
+  dados de usuários.     
 
-Promoções: Seção dedicada a ofertas especiais.
+  **Validação de login e Adicionamos uma checagem antes de salvar um novo
+  cadastro** -- evitar   usuário no `localStorage`.
+  que e-mails duplicados 
+  fossem cadastrados.    
 
-Pedidos: Guia com instruções claras para realizar pedidos.
+  **Edição e exclusão de Implementamos eventos "click" nos botões
+  pedidos** -- ao        "Editar" e "Excluir", removendo a linha da
+  editar, o pedido       tabela e repondo os dados no formulário.
+  antigo precisava sair  
+  da lista.              
 
-Sobre: ​​Detalhes sobre a história e a proposta do restaurante.
+  **Animações ao rolar a Foi usado `IntersectionObserver` para adicionar
+  página** -- garantir   a classe `.appear` dinamicamente.
+  que os elementos só    
+  aparecessem após       
+  entrar no viewport.    
 
-Contato: Formulário e informações para contato.
+  **Imagens não          Substituímos por URLs de imagens livres
+  carregavam ou eram     (Unsplash e Pexels) adequadas a cada promoção.
+  pouco realistas** --   
+  links quebrados ou     
+  genéricos.             
+  -----------------------------------------------------------------------
 
-Grupo de Desenvolvimento
-Integrantes
-Jonathan Araújo Rozeno – RGM: 37844300 | E-mail: jonatanaraujo2003@gmail.com
+## 4. Estrutura geral do código
 
-Renan Cordeiro da Silva – RGM: 37859021 | E-mail: silvarenansilva92@gmail.com
+-   **HTML**: Navbar, Hero, Menu, Promoções, Pedidos (CRUD), Sobre,
+    Contato, Modais de login/cadastro/recuperação/avaliação.
+-   **CSS**: Animações e estilos personalizados.
+-   **JS**: Toda a lógica de interação (CRUD de pedidos, autenticação,
+    animações).
 
-Sânia M. Alves Almeida – RGM: 38743124 | E-mail: saniaalvesalmeida@gmail.com
-
-Thiago Freire da Silva – RGM: 37871455 | E-mail: thsilva34567@gmail.com
-
-Informações Adicionais
-Disciplina: Análise de Sistemas II
-Professor: Cristiano Negrão
-Semestre: 2025/2
-Informações Adicionais Disciplina: Análise de Sistemas II
-
-Professor: Cristiano Negrão
-
-Semestre: 2025/2
+> 📌 **Resumo:** O projeto demonstra um CRUD funcional de pedidos e um
+> mini-CRUD de usuários com autenticação. Usa tecnologias simples do
+> lado do cliente para simular um sistema completo de restaurante sem
+> precisar de backend real.
