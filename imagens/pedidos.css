@@ -1,0 +1,74 @@
+/* pedidos.css */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f6f6f6;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #8b0000;
+  color: white;
+  padding: 16px;
+  text-align: center;
+}
+
+main.pedido {
+  max-width: 760px;
+  margin: 24px auto;
+  background: white;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+label {
+  display:block;
+  margin-top:12px;
+  font-weight:600;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select,
+textarea {
+  width:100%;
+  padding:8px 10px;
+  margin-top:6px;
+  box-sizing:border-box;
+}
+
+button {
+  margin-top:16px;
+  padding:10px 16px;
+  background:#8b0000;
+  color:white;
+  border:none;
+  cursor:pointer;
+  font-size:16px;
+}
+
+.sucesso {
+  background: #e6ffed;
+  border: 1px solid #bff0c2;
+  padding: 10px;
+  margin-bottom: 12px;
+}
+
+.erro {
+  background: #ffe6e6;
+  border: 1px solid #f0bcbc;
+  padding: 10px;
+  margin-bottom: 12px;
+}
+
+table {
+  width:100%;
+  border-collapse: collapse;
+}
+
+table th, table td {
+  border:1px solid #ddd;
+  padding:8px;
+  text-align:left;
+}

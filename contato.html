@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato - Estação de Bebidas e Sabores</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    .hero {
+      background: url('https://picsum.photos/1920/400?contact') center/cover no-repeat;
+      height: 300px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .hero h1 { background-color: rgba(0,0,0,0.5); padding: 20px; border-radius: 10px; }
+    section { padding: 40px 0; }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">Estação de Bebidas e Sabores</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+        <li class="nav-item"><a class="nav-link" href="promocoes.html">Promoções</a></li>
+        <li class="nav-item"><a class="nav-link" href="pedidos.html">Pedidos</a></li>
+        <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre</a></li>
+        <li class="nav-item"><a class="nav-link active" href="contato.html">Contato</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="hero">
+  <h1>Contato</h1>
+</div>
+
+<section class="container">
+  <h2 class="text-center mb-4">Fale Conosco</h2>
+  <div class="row">
+    <div class="col-md-6 mb-4">
+      <p><strong>Endereço:</strong> Rua Exemplo, 123 - Cidade, Estado</p>
+      <p><strong>Telefone:</strong> (11) 99999-9999</p>
+      <p><strong>E-mail:</strong> contato@bebidasesabores.com</p>
+      <p><strong>Redes Sociais:</strong></p>
+      <ul>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">WhatsApp</a></li>
+      </ul>
+    </div>
+    <div class="col-md-6 mb-4">
+      <form>
+        <div class="mb-3">
+          <label for="nome" class="form-label">Nome</label>
+          <input type="text" class="form-control" id="nome" required>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">E-mail</label>
+          <input type="email" class="form-control" id="email" required>
+        </div>
+        <div class="mb-3">
+          <label for="mensagem" class="form-label">Mensagem</label>
+          <textarea class="form-control" id="mensagem" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Enviar Mensagem</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
