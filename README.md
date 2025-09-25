@@ -1,66 +1,86 @@
-Estação de Bebidas e Sabores Este projeto é um site institucional para o restaurante fictício "Estação de Bebidas e Sabores". O objetivo principal é apresentar de forma clara e acessíveis informações essenciais, como cardápio, promoções, formas de pedidos e contato.
+Estação de Bebidas e Sabores - Website
+Este é um projeto de uma página web única (single-page) para um restaurante fictício chamado "Estação de Bebidas e Sabores". O site é totalmente responsivo e foi construído com HTML, Bootstrap 5 e JavaScript puro, apresentando seções de menu, promoções e um sistema interativo de pedidos e autenticação de usuários.
 
-O projeto faz parte da disciplina Análise de Sistemas II e dá continuidade ao trabalho desenvolvido no semestre anterior (Análise de Sistemas I).
+✨ Funcionalidades Principais
+Design Responsivo: O layout se adapta perfeitamente a diferentes tamanhos de tela, de desktops a dispositivos móveis, graças ao uso do framework Bootstrap.
 
-📜 Visão Geral O site foi projetado para ser intuitivo e responsivo, garantindo uma experiência de usuário otimizada em diversos dispositivos. A arquitetura foi projetada para ser modular, facilitando a manutenção e a adição de novas funcionalidades no futuro.
+Navegação Fixa e Suave: Uma barra de navegação no topo da página permite o acesso rápido a todas as seções, com um efeito de rolagem suave.
 
-🛠️ Tecnologias Utilizadas O projeto foi construído com as seguintes tecnologias, escolhidas para consolidar o conhecimento em programação web e agilizar o desenvolvimento de um layout moderno:
+Animações de Rolagem: Elementos surgem suavemente na tela à medida que o usuário rola a página, utilizando a API IntersectionObserver do JavaScript para um efeito moderno.
 
-HTML5: Para a estruturação semântica do conteúdo.
+Sistema de Pedidos Interativo:
 
-CSS3: Para o estilo visual e personalizado.
+Adicionar Pedidos: Um formulário permite que os usuários selecionem pratos e bebidas e os adicionem a uma tabela de "Meus Pedidos".
 
-Bootstrap 5: Para o desenvolvimento de um layout responsivo e moderno.
+Editar e Excluir: Cada pedido na lista pode ser editado (recarregando os dados no formulário) ou excluído dinamicamente.
 
-JavaScript: (em planejamento) Para adicionar interatividade e dinamismo ao site.
+Avaliar Pedidos: Uma funcionalidade de avaliação em um modal permite ao usuário dar uma nota de 1 a 5 estrelas para cada pedido feito.
 
-Acessibilidade: Implementação de boas práticas como uso de aria-labels, contraste adequado e navegação clara.
+Sistema de Autenticação Completo:
 
-📂 Estrutura de Arquivos
-estacao-bebidas-sabores/
-│
-├── index.html          # Página inicial e destaques
-├── menu.html           # Cardápio completo
-├── promocoes.html      # Promoções ativas e ofertas
-├── pedidos.html        # Informações sobre como realizar pedidos
-├── sobre.html          # História e missão do restaurante
-├── contato.html        # Formulário de contato e informações de contato
-│
-├── css/
-│   ├── style.css       # Estilos globais e de componentes
-│   └── ...             # Estilos específicos para cada página
-│
-└── imagens/
-    ├── imagem1.jpg
-    └── etc.
-✨ Funcionalidades Implementadas Página Inicial: Apresentação visual do restaurante com destaques.
+Cadastro e Login: Os usuários podem se cadastrar e fazer login. As informações são salvas no localStorage do navegador, mantendo o usuário conectado mesmo após fechar a página.
 
-Menu: Lista categorizada de comidas, bebidas e sobremesas.
+Recuperação de Senha: Um modal simulado para "Esqueceu a senha?" foi implementado.
 
-Promoções: Seção dedicada a ofertas especiais.
+Área de Usuário Dinâmica: A barra de navegação exibe o nome do usuário logado e um botão de "Sair", ou o botão "Login / Cadastro" caso contrário.
 
-Pedidos: Guia com instruções claras para realizar pedidos.
+🛠 Tecnologias Utilizadas
+HTML5: Para a estrutura semântica do conteúdo da página.
 
-Sobre: ​​Detalhes sobre a história e a proposta do restaurante.
+CSS3: Estilos personalizados para animações e efeitos de hover nos cards.
 
-Contato: Formulário e informações para contato.
+Bootstrap 5.1.3: Framework CSS para criar um layout responsivo e utilizar componentes pré-estilizados como a barra de navegação, modais, cards e o sistema de grid.
 
-Grupo de Desenvolvimento
-Integrantes
-Jonathan Araújo Rozeno – RGM: 37844300 | E-mail: jonatanaraujo2003@gmail.com
+JavaScript (ES6+): Para toda a interatividade da página, incluindo:
 
-Renan Cordeiro da Silva – RGM: 37859021 | E-mail: silvarenansilva92@gmail.com
+Manipulação do DOM para o sistema de pedidos.
 
-Sânia M. Alves Almeida – RGM: 38743124 | E-mail: saniaalvesalmeida@gmail.com
+Gerenciamento de eventos (event listeners).
 
-Thiago Freire da Silva – RGM: 37871455 | E-mail: thsilva34567@gmail.com
+Uso da API IntersectionObserver para animações de scroll.
 
-Informações Adicionais
-Disciplina: Análise de Sistemas II
-Professor: Cristiano Negrão
-Semestre: 2025/2
-Informações Adicionais Disciplina: Análise de Sistemas II
+Gerenciamento de dados no localStorage para o sistema de autenticação.
 
-Professor: Cristiano Negrão
+🚀 Como Executar
+Este projeto não requer um servidor web ou dependências complexas. Para executá-lo:
 
-Semestre: 2025/2
+Salve o código como um arquivo index.html.
+
+Abra o arquivo index.html em qualquer navegador de internet moderno (como Chrome, Firefox, ou Edge).
+
+Pronto! A página será carregada e todas as funcionalidades estarão disponíveis.
+
+🏛 Estrutura do Código
+O código está contido em um único arquivo HTML, organizado da seguinte forma:
+
+<head>: Inclui metadados, o título da página e a importação dos arquivos CSS e JS do Bootstrap via CDN. A seção <style> contém o CSS personalizado.
+
+<body>:
+
+<nav>: A barra de navegação superior, que é fixa.
+
+<div id="home">: Seção principal (Hero) com a imagem de fundo e o título.
+
+<section>: O corpo da página é dividido em seções temáticas:
+
+#menu: Exibe os pratos disponíveis.
+
+#promocoes: Mostra as promoções especiais.
+
+#pedidos: Contém o formulário para fazer pedidos e a tabela que os exibe.
+
+#sobre: Informações sobre o restaurante.
+
+#contato: Dados para contato e localização.
+
+Modais: O código HTML para os modals (janelas pop-up) de autenticação, recuperação de senha e avaliação de pedidos está no final do <body>.
+
+<script>:
+
+Todo o código JavaScript está localizado no final do <body>.
+
+Lógica de Animação: Configura o IntersectionObserver para aplicar classes de animação aos elementos quando eles se tornam visíveis.
+
+Lógica de Pedidos: Gerencia os eventos do formulário de pedidos, adicionando, editando, excluindo e avaliando itens na tabela.
+
+Lógica de Autenticação: Controla os formulários de login, cadastro e recuperação de senha, utilizando o localStorage para armazenar e recuperar dados dos usuários e o estado de login.
