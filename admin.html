@@ -1,0 +1,47 @@
+<script>
+document.addEventListener('DOMContentLoaded', ()=> {
+  const ADMIN_EMAIL = 'admin@admin.com';
+
+  // Elements
+  const authArea = document.getElementById('auth-area');
+  const adminSidebar = document.getElementById('adminSidebar');
+  const adminArea = document.getElementById('adminArea');
+  const mainContent = document.getElementById('mainContent');
+  const adminSearchInput = document.getElementById('adminSearchInput');
+  const adminSearchInputSidebar = document.getElementById('adminSearchInputSidebar');
+  const adminPedidosBody = document.getElementById('adminPedidosBody');
+  const statTotalPedidos = document.getElementById('statTotalPedidos');
+  const statPratoFavorito = document.getElementById('statPratoFavorito');
+  const statBebidaFavorita = document.getElementById('statBebidaFavorita');
+  const statLastOrder = document.getElementById('statLastOrder');
+  const statPedidosHoje = document.getElementById('statPedidosHoje');
+
+  let dishesChart, drinksChart;
+  const appearSections = {
+    dash: document.getElementById('dashSection'),
+    graficos: document.getElementById('graficosSection'),
+    pedidosAdmin: document.getElementById('pedidosAdminSection')
+  };
+
+  // Helper localStorage
+  const storageHelper = {
+    save(key, data) {
+      localStorage.setItem(key, JSON.stringify(data));
+    },
+    load(key) {
+      const value = localStorage.getItem(key);
+      return value ? JSON.parse(value) : null;
+    },
+    remove(key) {
+      localStorage.removeItem(key);
+    },
+    clearAll() {
+      localStorage.clear();
+    }
+  };
+
+  // Aqui você pode continuar adicionando sua lógica (ex: login, salvar pedidos, etc.)
+});
+</script>
+</body>
+</html>

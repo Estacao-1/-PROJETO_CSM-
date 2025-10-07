@@ -63,6 +63,7 @@
         <li class="nav-item"><a class="nav-link" href="#pedidos">Pedidos</a></li>
         <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
         <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+        <li class="nav-item" id="admin-link" style="display: none;"><a class="nav-link fw-bold text-warning" href="#admin-panel">Painel Admin</a></li>
       </ul>
       <div id="auth-area">
         <button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#authModal">Login / Cadastro</button>
@@ -133,21 +134,25 @@
         </div>
       </div>
       <div class="col-md-4 mb-4 fade-in" style="animation-delay: 0.6s;">
-  <div class="card">
-    <img src="https://images.pexels.com/photos/1269040/pexels-photo-1269040.jpeg?auto=compress&cs=tinysrgb&h=400&w=400" 
-         class="card-img-top" 
-         alt="Promoção 3 - Bebidas em Dobro">
-    <div class="card-body">
-      <h5 class="card-title">Bebida em Dobro</h5>
-      <p class="card-text">Peça uma bebida e leve outra igual sem custo adicional.</p>
+        <div class="card">
+          <img src="https://images.pexels.com/photos/1269040/pexels-photo-1269040.jpeg?auto=compress&cs=tinysrgb&h=400&w=400" 
+               class="card-img-top" 
+               alt="Promoção 3 - Bebidas em Dobro">
+          <div class="card-body">
+            <h5 class="card-title">Bebida em Dobro</h5>
+            <p class="card-text">Peça uma bebida e leve outra igual sem custo adicional.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
 
 <section id="pedidos" class="container">
   <h2 class="text-center mb-4">Faça seu Pedido</h2>
   <form id="pedidoForm">
+    <h4 class="text-muted">1. Escolha seus itens</h4>
     <div class="mb-3">
       <label for="prato" class="form-label">Escolha o Prato</label>
       <select class="form-select" id="prato" required>
@@ -168,9 +173,30 @@
     </div>
     <div class="mb-3">
       <label for="observacao" class="form-label">Observações</label>
-      <textarea class="form-control" id="observacao" rows="2"></textarea>
+      <textarea class="form-control" id="observacao" rows="2" placeholder="Ex: Sem cebola, ponto da carne, etc."></textarea>
     </div>
-    <button type="submit" class="btn btn-success w-100">Adicionar Pedido</button>
+
+    <h4 class="text-muted mt-5">2. Seus Dados para Entrega</h4>
+    <div class="mb-3">
+        <label for="endereco" class="form-label">Endereço Completo</label>
+        <input type="text" class="form-control" id="endereco" placeholder="Rua, Número, Bairro, Complemento" required>
+    </div>
+     <div class="mb-3">
+        <label for="telefone" class="form-label">Telefone para Contato</label>
+        <input type="tel" class="form-control" id="telefone" placeholder="(XX) XXXXX-XXXX" required>
+    </div>
+    <div class="mb-3">
+      <label for="pagamento" class="form-label">Forma de Pagamento</label>
+      <select class="form-select" id="pagamento" required>
+        <option value="">Selecione</option>
+        <option value="Cartão de Crédito">Cartão de Crédito</option>
+        <option value="Cartão de Débito">Cartão de Débito</option>
+        <option value="PIX">PIX</option>
+        <option value="Dinheiro">Dinheiro</option>
+      </select>
+    </div>
+    
+    <button type="submit" class="btn btn-success w-100 mt-4">Adicionar Pedido</button>
   </form>
 
   <h3 class="text-center mt-5 mb-4">Meus Pedidos</h3>
@@ -186,6 +212,66 @@
     </thead>
     <tbody></tbody>
   </table>
+</section>
+
+<section id="admin-panel" class="bg-light" style="display: none;">
+    <div class="container">
+        <h2 class="text-center mb-4">Painel Administrativo</h2>
+        
+        <h4 class="text-muted mb-3">Relatório Simples</h4>
+        <div class="row mb-5">
+            <div class="col-md-4">
+                <div class="card text-center text-white bg-primary">
+                    <div class="card-body">
+                        <h5 class="card-title">Total de Pedidos</h5>
+                        <p class="card-text fs-2 fw-bold" id="report-total-pedidos">0</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center text-white bg-success">
+                    <div class="card-body">
+                        <h5 class="card-title">Prato Mais Pedido</h5>
+                        <p class="card-text fs-4" id="report-prato-favorito">-</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center text-white bg-info">
+                    <div class="card-body">
+                        <h5 class="card-title">Bebida Mais Pedida</h5>
+                        <p class="card-text fs-4" id="report-bebida-favorita">-</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h4 class="text-muted mb-3">Todos os Pedidos</h4>
+
+        <div class="mb-3">
+            <input type="text" class="form-control" id="admin-search-input" placeholder="Buscar por E-mail do Cliente...">
+        </div>
+        
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered text-center">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Cliente (E-mail)</th>
+                        <th>Data</th>
+                        <th>Prato</th>
+                        <th>Bebida</th>
+                        <th>Endereço</th>
+                        <th>Telefone</th>
+                        <th>Pagamento</th>
+                        <th>Observação</th>
+                        <th>Ações</th> 
+                    </tr>
+                </thead>
+                <tbody id="admin-pedidos-body">
+                </tbody>
+            </table>
+        </div>
+    </div>
 </section>
 
 <section id="sobre" class="bg-light">
@@ -336,8 +422,9 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+
+  const ADMIN_EMAIL = 'admin@admin.com';
   
-  // --- LÓGICA DE ANIMAÇÃO DE SCROLL ---
   const faders = document.querySelectorAll('.fade-in');
   const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
   const appearOnScroll = new IntersectionObserver((entries, observer) => {
@@ -350,7 +437,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }, appearOptions);
   faders.forEach(fader => appearOnScroll.observe(fader));
 
-  // --- LÓGICA DOS PEDIDOS ---
   const pedidoForm = document.getElementById('pedidoForm');
   const tableBody = document.querySelector('#pedidosTable tbody');
   const avaliacaoModal = new bootstrap.Modal(document.getElementById('avaliacaoModal'));
@@ -360,12 +446,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
   pedidoForm.addEventListener('submit', function(e){
     e.preventDefault();
+    
+    const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+    if (!loggedInUser) {
+        alert('Você precisa estar logado para fazer um pedido.');
+        return;
+    }
+    
+    // Captura dos valores do formulário (incluindo os novos campos)
     const prato = document.getElementById('prato').value;
     const bebida = document.getElementById('bebida').value;
     const observacao = document.getElementById('observacao').value;
+    const endereco = document.getElementById('endereco').value;
+    const telefone = document.getElementById('telefone').value;
+    const pagamento = document.getElementById('pagamento').value;
     
-    if(!prato || !bebida) {
-        alert('Por favor, escolha um prato e uma bebida.');
+    // Validação dos campos
+    if(!prato || !bebida || !endereco || !telefone || !pagamento) {
+        alert('Por favor, preencha todos os campos obrigatórios.');
         return;
     }
 
@@ -373,7 +471,7 @@ document.addEventListener('DOMContentLoaded', function() {
     row.innerHTML = `
       <td>${prato}</td>
       <td>${bebida}</td>
-      <td>${observacao}</td>
+      <td>${observacao || '-'}</td>
       <td class="avaliacao-cell">Pendente</td>
       <td>
         <button class="btn btn-primary btn-sm editar">Editar</button>
@@ -382,15 +480,40 @@ document.addEventListener('DOMContentLoaded', function() {
       </td>
     `;
     tableBody.appendChild(row);
+
+    // Salva o novo pedido com todos os dados no localStorage
+    const allOrders = JSON.parse(localStorage.getItem('allOrders')) || [];
+    const newOrder = {
+        user: loggedInUser.email,
+        prato,
+        bebida,
+        observacao,
+        endereco,
+        telefone,
+        pagamento,
+        date: new Date().toLocaleString('pt-BR')
+    };
+    allOrders.push(newOrder);
+    localStorage.setItem('allOrders', JSON.stringify(allOrders));
+
+    // Atualiza o painel admin se o admin estiver logado
+    if (loggedInUser.email === ADMIN_EMAIL) {
+        renderAdminPanel();
+    }
+
     pedidoForm.reset();
 
     row.querySelector('.deletar').addEventListener('click', () => row.remove());
     
     row.querySelector('.editar').addEventListener('click', () => {
+      // Ao editar, preenche todos os campos novamente
       document.getElementById('prato').value = prato;
       document.getElementById('bebida').value = bebida;
       document.getElementById('observacao').value = observacao;
-      row.remove();
+      document.getElementById('endereco').value = endereco;
+      document.getElementById('telefone').value = telefone;
+      document.getElementById('pagamento').value = pagamento;
+      row.remove(); // Remove a linha para ser adicionada novamente com as alterações
     });
 
     row.querySelector('.avaliar').addEventListener('click', () => {
@@ -409,7 +532,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // --- LÓGICA DE AUTENTICAÇÃO ---
+  // --- LÓGICA DE AUTENTICAÇÃO (sem alterações) ---
   const authArea = document.getElementById('auth-area');
   const loginForm = document.getElementById('loginForm');
   const registerForm = document.getElementById('registerForm');
@@ -417,13 +540,9 @@ document.addEventListener('DOMContentLoaded', function() {
   const authModal = new bootstrap.Modal(document.getElementById('authModal'));
   const forgotPasswordModal = new bootstrap.Modal(document.getElementById('forgotPasswordModal'));
 
-  // Função para obter usuários do localStorage
   const getUsers = () => JSON.parse(localStorage.getItem('users')) || [];
-  
-  // Função para salvar usuários no localStorage
   const saveUsers = (users) => localStorage.setItem('users', JSON.stringify(users));
 
-  // Lógica de Cadastro
   registerForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const name = document.getElementById('registerName').value;
@@ -441,12 +560,10 @@ document.addEventListener('DOMContentLoaded', function() {
     saveUsers(users);
     alert('Cadastro realizado com sucesso! Por favor, faça o login.');
     registerForm.reset();
-    // Muda para a aba de login
     const loginTab = new bootstrap.Tab(document.getElementById('login-tab'));
     loginTab.show();
   });
 
-  // Lógica de Login
   loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const email = document.getElementById('loginEmail').value;
@@ -465,7 +582,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // Lógica de "Esqueci a Senha"
   forgotPasswordForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const email = document.getElementById('forgotEmail').value;
@@ -477,9 +593,103 @@ document.addEventListener('DOMContentLoaded', function() {
         alert('Nenhum usuário encontrado com este e-mail.');
     }
   });
+  
+  // --- LÓGICA DO PAINEL ADMIN ATUALIZADA ---
+  function generateSimpleReport(allOrders) {
+      document.getElementById('report-total-pedidos').textContent = allOrders.length;
+      
+      if (allOrders.length === 0) {
+          document.getElementById('report-prato-favorito').textContent = '-';
+          document.getElementById('report-bebida-favorita').textContent = '-';
+          return;
+      }
 
-  // Atualiza a área de login/logout na Navbar
+      const findMostFrequent = (array, key) => {
+          const counts = array.reduce((acc, curr) => {
+              acc[curr[key]] = (acc[curr[key]] || 0) + 1;
+              return acc;
+          }, {});
+          if (Object.keys(counts).length === 0) return '-';
+          return Object.keys(counts).reduce((a, b) => counts[a] > counts[b] ? a : b);
+      };
+
+      const mostOrderedDish = findMostFrequent(allOrders, 'prato');
+      const mostOrderedDrink = findMostFrequent(allOrders, 'bebida');
+
+      document.getElementById('report-prato-favorito').textContent = mostOrderedDish;
+      document.getElementById('report-bebida-favorita').textContent = mostOrderedDrink;
+  }
+  
+  function renderAdminPanel(searchTerm = '') {
+    const adminTableBody = document.getElementById('admin-pedidos-body');
+    const allOrders = JSON.parse(localStorage.getItem('allOrders')) || [];
+    
+    generateSimpleReport(allOrders);
+
+    const filteredOrders = allOrders.filter(order => 
+        order.user.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    adminTableBody.innerHTML = ''; 
+
+    if (filteredOrders.length === 0) {
+        // Colspan atualizado para 9 colunas
+        adminTableBody.innerHTML = '<tr><td colspan="9">Nenhum pedido encontrado.</td></tr>';
+        return;
+    }
+
+    // Ordena os pedidos do mais recente para o mais antigo
+    filteredOrders.sort((a, b) => new Date(b.date.split(', ')[0].split('/').reverse().join('-') + 'T' + b.date.split(', ')[1]) - new Date(a.date.split(', ')[0].split('/').reverse().join('-') + 'T' + a.date.split(', ')[1]));
+
+
+    filteredOrders.forEach(order => {
+        const row = document.createElement('tr');
+        // Adiciona as novas colunas à tabela do admin
+        row.innerHTML = `
+            <td>${order.user}</td>
+            <td>${order.date}</td>
+            <td>${order.prato}</td>
+            <td>${order.bebida}</td>
+            <td>${order.endereco || '-'}</td>
+            <td>${order.telefone || '-'}</td>
+            <td>${order.pagamento || '-'}</td>
+            <td>${order.observacao || '-'}</td>
+            <td>
+                <button class="btn btn-danger btn-sm admin-delete-btn" data-order-date="${order.date}">Excluir</button>
+            </td>
+        `;
+        adminTableBody.appendChild(row);
+    });
+  }
+
+  const adminSearchInput = document.getElementById('admin-search-input');
+  if (adminSearchInput) {
+      adminSearchInput.addEventListener('input', (e) => {
+          renderAdminPanel(e.target.value);
+      });
+  }
+
+  const adminTableBody = document.getElementById('admin-pedidos-body');
+  if (adminTableBody) {
+      adminTableBody.addEventListener('click', (e) => {
+          if (e.target.classList.contains('admin-delete-btn')) {
+              if (confirm('Tem certeza que deseja excluir este pedido?')) {
+                  const orderDate = e.target.dataset.orderDate;
+                  let allOrders = JSON.parse(localStorage.getItem('allOrders')) || [];
+                  // A exclusão agora é mais segura, filtrando por data e usuário para evitar duplicidade
+                  allOrders = allOrders.filter(order => !(order.date === orderDate && order.user === e.target.closest('tr').cells[0].textContent));
+                  localStorage.setItem('allOrders', JSON.stringify(allOrders));
+                  renderAdminPanel(adminSearchInput.value); // Re-renderiza com o filtro atual
+              }
+          }
+      });
+  }
+
+
   function updateAuthArea(user) {
+    const adminLink = document.getElementById('admin-link');
+    const adminPanel = document.getElementById('admin-panel');
+
     if (user) {
         authArea.innerHTML = `
             <span class="navbar-text text-white me-3">Olá, ${user.name}</span>
@@ -488,15 +698,27 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('logoutBtn').addEventListener('click', () => {
             localStorage.removeItem('loggedInUser');
             updateAuthArea(null);
+            tableBody.innerHTML = ''; 
         });
+
+        if (user.email === ADMIN_EMAIL) {
+            adminLink.style.display = 'block';
+            adminPanel.style.display = 'block';
+            renderAdminPanel();
+        } else {
+            adminLink.style.display = 'none';
+            adminPanel.style.display = 'none';
+        }
+
     } else {
         authArea.innerHTML = `
             <button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#authModal">Login / Cadastro</button>
         `;
+        adminLink.style.display = 'none';
+        adminPanel.style.display = 'none';
     }
   }
 
-  // Verifica se já existe um usuário logado ao carregar a página
   const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
   updateAuthArea(loggedInUser);
 
